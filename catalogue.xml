@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="catalogue.xsl"?>
+
+<!DOCTYPE catalogue [
+	<!ELEMENT catalogue (genres,developers,publishers,platforms,games)>
+	<!ATTLIST catalogue
+		xmlns CDATA #FIXED "http://www.w3schools.com"
+		xmlns:xsi CDATA #FIXED "http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation CDATA #FIXED "http://www.w3schools.com catalogue.xsd">
+	<!ELEMENT genres (genre+)>
+	<!ELEMENT genre (#PCDATA)>
+	<!ATTLIST genre id ID #REQUIRED>
+	<!ELEMENT developers (developer+)>
+	<!ELEMENT developer (#PCDATA)>
+	<!ATTLIST developer id ID #REQUIRED>
+	<!ELEMENT publishers (publisher+)>
+	<!ELEMENT publisher (#PCDATA)>
+	<!ATTLIST publisher id ID #REQUIRED>
+	<!ELEMENT platforms (platform+)>
+	<!ELEMENT platform (#PCDATA)>
+	<!ATTLIST platform id ID #REQUIRED>
+	<!ELEMENT games (game+)>
+	<!ELEMENT game (title,release_year,game_developer,game_publisher,PEGI_rating,game_genres,game_platforms,logo,gallery,description)>
+	<!ATTLIST game id ID #REQUIRED>
+	<!ELEMENT title (#PCDATA)>
+	<!ELEMENT release_year (#PCDATA)>
+	<!ELEMENT game_developer EMPTY>
+	<!ATTLIST game_developer ref_dev_id IDREF #REQUIRED>
+	<!ELEMENT game_publisher EMPTY>
+	<!ATTLIST game_publisher ref_pub_id IDREF #REQUIRED>
+	<!ELEMENT PEGI_rating (#PCDATA)>
+	<!ELEMENT game_genres (game_genre+)>
+	<!ELEMENT game_genre EMPTY>
+	<!ATTLIST game_genre ref_genre_id IDREF #REQUIRED>
+	<!ELEMENT game_platforms (game_platform+)>
+	<!ELEMENT game_platform EMPTY>
+	<!ATTLIST game_platform ref_platf_id IDREF #REQUIRED>
+	<!ELEMENT logo EMPTY>
+	<!ATTLIST logo href ENTITY #REQUIRED>
+	<!ELEMENT gallery (img+)>
+	<!ELEMENT img EMPTY>
+	<!ATTLIST img href ENTITY #REQUIRED>
+	<!ELEMENT description (#PCDATA)>
+
+	<!ENTITY gm-01-img-01 SYSTEM "https://i.ibb.co/jwbwPx8/2024-01-02-125724077.jpg" NDATA jpg>
+	<!ENTITY gm-01-img-02 SYSTEM "https://i.ibb.co/Trb07q3/2024-01-02-125927596.jpg" NDATA jpg>
+	<!ENTITY gm-01-img-03 SYSTEM "https://i.ibb.co/ZXh9pBn/2024-01-02-130202866.jpg" NDATA jpg>
+	<!ENTITY gm-01-img-04 SYSTEM "https://i.ibb.co/N7txNQN/2024-01-02-130314112.jpg" NDATA jpg>
+	<!ENTITY gm-01-img-05 SYSTEM "https://i.ibb.co/pjGfK0P/2024-01-02-130641395.jpg" NDATA jpg>
+	
+	<!ENTITY gm-02-img-01 SYSTEM "https://i.ibb.co/8dy1kY8/2024-01-02-131034520.jpg" NDATA jpg>
+	<!ENTITY gm-02-img-02 SYSTEM "https://i.ibb.co/ykJPGjw/2024-01-02-131212746.jpg" NDATA jpg>
+	<!ENTITY gm-02-img-03 SYSTEM "https://i.ibb.co/1GRvG9w/2024-01-02-131315393.jpg" NDATA jpg>
+	<!ENTITY gm-02-img-04 SYSTEM "https://i.ibb.co/vk6p8sW/2024-01-02-131429773.jpg" NDATA jpg>
+	<!ENTITY gm-02-img-05 SYSTEM "https://i.ibb.co/MfYKMky/2024-01-02-131516836.jpg" NDATA jpg>
+	
+	<!ENTITY gm-03-img-01 SYSTEM "https://i.ibb.co/12Y0L5B/2024-01-02-131856247.jpg" NDATA jpg>
+	<!ENTITY gm-03-img-02 SYSTEM "https://i.ibb.co/PY12QZb/2024-01-02-131944997.jpg" NDATA jpg>
+	<!ENTITY gm-03-img-03 SYSTEM "https://i.ibb.co/0B1twj3/2024-01-02-132052582.jpg" NDATA jpg>
+	<!ENTITY gm-03-img-04 SYSTEM "https://i.ibb.co/30MW93h/2024-01-02-132135075.jpg" NDATA jpg>
+	<!ENTITY gm-03-img-05 SYSTEM "https://i.ibb.co/xmML9kJ/2024-01-02-132214362.jpg" NDATA jpg>
+	
+	<!ENTITY gm-04-img-01 SYSTEM "https://i.ibb.co/3C1VSWw/2024-01-02-132748017.jpg" NDATA jpg>
+	<!ENTITY gm-04-img-02 SYSTEM "https://i.ibb.co/vcK6bZv/2024-01-02-132844988.jpg" NDATA jpg>
+	<!ENTITY gm-04-img-03 SYSTEM "https://i.ibb.co/Kj8f1mD/2024-01-02-132929026.jpg" NDATA jpg>
+	<!ENTITY gm-04-img-04 SYSTEM "https://i.ibb.co/x58bHTK/2024-01-02-133035073.jpg" NDATA jpg>
+	<!ENTITY gm-04-img-05 SYSTEM "https://i.ibb.co/PDMYW7p/2024-01-02-133124183.jpg" NDATA jpg>
+	
+	<!ENTITY gm-05-img-01 SYSTEM "https://i.ibb.co/T2NYFLH/2024-01-02-134141175.jpg" NDATA jpg>
+	<!ENTITY gm-05-img-02 SYSTEM "https://i.ibb.co/zSRhyH8/2024-01-02-134830013.jpg" NDATA jpg>
+	<!ENTITY gm-05-img-03 SYSTEM "https://i.ibb.co/CHs3BtY/2024-01-02-134925047.jpg" NDATA jpg>
+	<!ENTITY gm-05-img-04 SYSTEM "https://i.ibb.co/5xVzsGp/2024-01-02-135020467.jpg" NDATA jpg>
+	<!ENTITY gm-05-img-05 SYSTEM "https://i.ibb.co/yRzh74x/2024-01-02-135207100.jpg" NDATA jpg>
+	
+	<!ENTITY gm-06-img-01 SYSTEM "https://i.ibb.co/vxNmYW5/2024-01-02-135639429.jpg" NDATA jpg>
+	<!ENTITY gm-06-img-02 SYSTEM "https://i.ibb.co/F5zrV83/2024-01-02-135740914.jpg" NDATA jpg>
+	<!ENTITY gm-06-img-03 SYSTEM "https://i.ibb.co/mRDRNW2/2024-01-02-135838580.jpg" NDATA jpg>
+	<!ENTITY gm-06-img-04 SYSTEM "https://i.ibb.co/jHLmdb4/2024-01-02-135920111.jpg" NDATA jpg>
+	<!ENTITY gm-06-img-05 SYSTEM "https://i.ibb.co/Ry3nPyY/2024-01-02-135955787.jpg" NDATA jpg>
+	
+	<!ENTITY gm-07-img-01 SYSTEM "https://i.ibb.co/B48NfPm/2024-01-02-141450239.jpg" NDATA jpg>
+	<!ENTITY gm-07-img-02 SYSTEM "https://i.ibb.co/bdjSmmD/2024-01-02-141556322.jpg" NDATA jpg>
+	<!ENTITY gm-07-img-03 SYSTEM "https://i.ibb.co/XSDTyjC/2024-01-02-141652170.jpg" NDATA jpg>
+	<!ENTITY gm-07-img-04 SYSTEM "https://i.ibb.co/Ny7hhj6/2024-01-02-141741229.jpg" NDATA jpg>
+	<!ENTITY gm-07-img-05 SYSTEM "https://i.ibb.co/2894JFp/2024-01-02-141901273.jpg" NDATA jpg>
+	
+	<!ENTITY gm-08-img-01 SYSTEM "https://i.ibb.co/rbQFBgs/2024-01-02-142606017.jpg" NDATA jpg>
+	<!ENTITY gm-08-img-02 SYSTEM "https://i.ibb.co/qRn1Xf3/2024-01-02-142741359.jpg" NDATA jpg>
+	<!ENTITY gm-08-img-03 SYSTEM "https://i.ibb.co/1nY13Hb/2024-01-02-142831326.jpg" NDATA jpg>
+	<!ENTITY gm-08-img-04 SYSTEM "https://i.ibb.co/1TRP1jS/2024-01-02-142921139.jpg" NDATA jpg>
+	<!ENTITY gm-08-img-05 SYSTEM "https://i.ibb.co/9wVYQjZ/2024-01-02-143003014.jpg" NDATA jpg>
+	
+	<!NOTATION jpg PUBLIC "jpg">
+]>
+
+<catalogue xmlns="http://www.w3schools.com"
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://www.w3schools.com catalogue.xsd">
+	<genres>
+		<genre id="g-01">Action-adventure game</genre>
+		<genre id="g-02">Action role-playing game</genre>
+		<genre id="g-03">City-building game</genre>
+		<genre id="g-04">Hack and slash</genre>
+		<genre id="g-05">Isometric RPG</genre>
+		<genre id="g-06">Metroidvania</genre>
+		<genre id="g-07">Narrative driven game</genre>
+		<genre id="g-08">Open world</genre>
+		<genre id="g-09">Platformer</genre>
+		<genre id="g-10">Role-playing game</genre>
+		<genre id="g-11">Sandbox</genre>
+		<genre id="g-12">Shooter</genre>
+		<genre id="g-13">Social simulation game</genre>
+		<genre id="g-14">Strategy</genre>
+		<genre id="g-15">Survival</genre>
+		<genre id="g-16">Turn-based combat</genre>
+		<genre id="g-17">Western</genre>
+	</genres>
+	<developers>
+		<developer id="dev-01">11 bit studios</developer>
+		<developer id="dev-02">Klei Entertainment</developer>
+		<developer id="dev-03">Larian Studios</developer>
+		<developer id="dev-04">Nintendo EPD</developer>
+		<developer id="dev-05">PlatinumGames</developer>
+		<developer id="dev-06">Rockstar Games</developer>
+		<developer id="dev-07">Team Cherry</developer>
+	</developers>
+	<publishers>
+		<publisher id="pub-01">11 bit studios</publisher>
+		<publisher id="pub-02">Klei Entertainment</publisher>
+		<publisher id="pub-03">Larian Studios</publisher>
+		<publisher id="pub-04">Nintendo</publisher>
+		<publisher id="pub-05">Rockstar Games</publisher>
+		<publisher id="pub-06">SEGA</publisher>
+		<publisher id="pub-07">Square Enix</publisher>
+		<publisher id="pub-08">Team Cherry</publisher>
+	</publishers>
+	<platforms>
+		<platform id="platf-01">Android</platform>
+		<platform id="platf-02">iOS</platform>
+		<platform id="platf-03">macOS</platform>
+		<platform id="platf-04">Nintendo Switch</platform>
+		<platform id="platf-05">PC</platform>
+		<platform id="platf-06">PlayStation 3</platform>
+		<platform id="platf-07">PlayStation 4</platform>
+		<platform id="platf-08">PlayStation 5</platform>
+		<platform id="platf-09">Wii U</platform>
+		<platform id="platf-10">Xbox 360</platform>
+		<platform id="platf-11">Xbox One</platform>
+		<platform id="platf-12">Xbox Series X/S</platform>
+	</platforms>
+	<games>
+		<game id="gm-01">
+			<title>Animal Crossing: New Horizons</title>
+			<release_year>2020</release_year>
+			<game_developer ref_dev_id="dev-04"/>
+			<game_publisher ref_pub_id="pub-04"/>
+			<PEGI_rating>3+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-11"/>
+				<game_genre ref_genre_id="g-13"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-04"/>
+			</game_platforms>
+			<logo href="gm-01-img-01"/>
+			<gallery>
+				<img href="gm-01-img-02"/>
+				<img href="gm-01-img-03"/>
+				<img href="gm-01-img-04"/>
+				<img href="gm-01-img-05"/>
+			</gallery>
+			<description>
+				Ако суматохата на съвременния живот те потиска, Том Нук има предложение за теб – почивка на пуст остров.
+
+				Няма ли част от теб, която копнее за свобода? Тогава може би дълга разходка по плажа на пуст остров, където те очаква богато съкровище от недокосната природа, е точно товa, от което имаш нужда!
+
+				Запретни ръкави и направи своя нов живот какъвто искаш. Събирай ресурси и изработвай всичко - от удобствата на ежедневното съществуване до полезни инструменти. Открий градинаря в себе си, докато взаимодействаш с цветя и дървета по нови начини. Създай ферма, в която правилата за това какво вирее на закрито и открито вече не важат. Сприятелявай се с нови заселници, наслаждавай се на сезоните, прескачай реки, докато изследващ острова, и още много!
+
+				-Персонализирай своя герой и дом, украси пейзажа, докато създаващ свой собствен островен рай.
+				-Изпитай нова строителна система - събирай материали, за да конструираш всичко - от мебели до инструменти!
+				-Наслади се на разнообразни релаксиращи дейности като градинарство, риболов, декориране, взаимодействай с очарователни персонажи и още много, докато класическите преживявания на Animal Crossing оживяват по забавни нови начини в обстановката на пустия остров.
+			</description>
+		</game>
+		<game id="gm-02">
+			<title>Baldur's Gate 3</title>
+			<release_year>2023</release_year>
+			<game_developer ref_dev_id="dev-03"/>
+			<game_publisher ref_pub_id="pub-03"/>
+			<PEGI_rating>18+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-05"/>
+				<game_genre ref_genre_id="g-10"/>
+				<game_genre ref_genre_id="g-14"/>
+				<game_genre ref_genre_id="g-16"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-03"/>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-08"/>
+				<game_platform ref_platf_id="platf-12"/>
+			</game_platforms>
+			<logo href="gm-02-img-01"/>
+			<gallery>
+				<img href="gm-02-img-02"/>
+				<img href="gm-02-img-03"/>
+				<img href="gm-02-img-04"/>
+				<img href="gm-02-img-05"/>
+			</gallery>
+			<description>
+				<![CDATA[
+					Отвлечени, заразени, изгубени. Превръщате се в чудовище, но с нарастването на покварата във вас расте и силата ви. Изковайте приказка за приятелство и предателство, саможертва и оцеляване и примамката на абсолютната власт. Хванати в конфликт между дяволи, божества и зловещи извънземни сили, вие и вашата група ще определите съдбата на Забравените царства.
+
+					КРАЙНОТО D&D ИЗЖИВЯВАНЕ
+					Изберете от широка селекция от D&D раси и класове или играйте като първоначален герой с ръчно изработен фон. Приключения, плячка, битки и романтика, докато пътувате през Забравените царства и отвъд тях. Играйте сами или като група от до четирима в мултиплейър – и внимателно избирайте спътниците си.
+
+					ПЛАВНО ПРЕВКЛЮЧВАНЕ МЕЖДУ ИГРА ЗА ЕДИН И МУЛТИПЛЕЙЪР 
+					Всеки герой тъче своя собствена история, сам или в група. Комбинирайте силите си в битка и разделете групата си, за да следвате собствените си мисии и планове. Измислете заедно перфектния план... или внесете елемент на хаос, когато приятелите ви най-малко го очакват. С кооперативна игра на разделен екран за до двама играчи или като до четирима играчи онлайн, Baldur's Gate 3 е приключение, създадено за играене сам или споделяно с приятели.
+				]]>
+			</description>
+		</game>
+		<game id="gm-03">
+			<title>Bayonetta</title>
+			<release_year>2017</release_year>
+			<game_developer ref_dev_id="dev-05"/>
+			<game_publisher ref_pub_id="pub-06"/>
+			<PEGI_rating>18+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-01"/>
+				<game_genre ref_genre_id="g-04"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-04"/>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-06"/>
+				<game_platform ref_platf_id="platf-07"/>
+				<game_platform ref_platf_id="platf-09"/>
+				<game_platform ref_platf_id="platf-10"/>
+				<game_platform ref_platf_id="platf-11"/>
+			</game_platforms>
+			<logo href="gm-03-img-01"/>
+			<gallery>
+				<img href="gm-03-img-02"/>
+				<img href="gm-03-img-03"/>
+				<img href="gm-03-img-04"/>
+				<img href="gm-03-img-05"/>
+			</gallery>
+			<description>
+				От легендарния режисьор на PlatinumGames Хидеки Камия, известен с игрите Resident Evil и Devil May Cry, SEGA представя една от най-универсално аплодираните екшък игри с герои на всички времена.
+
+				Плод на забранен съюз между Маговете на светлината и Вещиците на мрака, могъщата вещица Байонета пътува от далечното минало към настоящето. Тя използва грациозния си боен стил и несравнимите си магически сили, за да очарова и ужаси противниците си в последните им мигове.
+
+				Въоръжена със смъртоносни оръжия и умения, Байонета обърква враговете си с екзотични движения и мъчителни атаки. С помощта на магията, тя може да изпълни заклинание наречено Кулминацията на мрака, с което да призове демонични чудовища и да опустоши всичкo наоколо.
+			</description>
+		</game>
+		<game id="gm-04">
+			<title>Don't Starve Together</title>
+			<release_year>2016</release_year>
+			<game_developer ref_dev_id="dev-02"/>
+			<game_publisher ref_pub_id="pub-02"/>
+			<PEGI_rating>12+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-01"/>
+				<game_genre ref_genre_id="g-11"/>
+				<game_genre ref_genre_id="g-15"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-01"/>
+				<game_platform ref_platf_id="platf-02"/>
+				<game_platform ref_platf_id="platf-04"/>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-06"/>
+				<game_platform ref_platf_id="platf-07"/>
+				<game_platform ref_platf_id="platf-09"/>
+				<game_platform ref_platf_id="platf-11"/>
+			</game_platforms>
+			<logo href="gm-04-img-01"/>
+			<gallery>
+				<img href="gm-04-img-02"/>
+				<img href="gm-04-img-03"/>
+				<img href="gm-04-img-04"/>
+				<img href="gm-04-img-05"/>
+			</gallery>
+			<description>
+				Влезте в странен и неизследван свят, пълен със странни същества, скрити опасности и древни тайни. Събирайте ресурси, за да създавате предмети и да изграждате структури, които отговарят на вашия стил на оцеляване. Играйте по своя начин, докато разкривате мистериите на "The Constant".
+
+				Сътрудничете с приятелите си в частна игра или намерете нови приятели онлайн. Работете с други играчи, за да оцелеете в суровата среда, или нанесете удар сами.
+
+				Правете каквото е необходимо, но най-важното, не гладувайте.
+			</description>
+		</game>
+		<game id="gm-05">
+			<title>Frostpunk</title>
+			<release_year>2018</release_year>
+			<game_developer ref_dev_id="dev-01"/>
+			<game_publisher ref_pub_id="pub-01"/>
+			<PEGI_rating>16+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-03"/>
+				<game_genre ref_genre_id="g-14"/>
+				<game_genre ref_genre_id="g-15"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-03"/>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-07"/>
+				<game_platform ref_platf_id="platf-08"/>
+				<game_platform ref_platf_id="platf-11"/>
+			</game_platforms>
+			<logo href="gm-05-img-01"/>
+			<gallery>
+				<img href="gm-05-img-02"/>
+				<img href="gm-05-img-03"/>
+				<img href="gm-05-img-04"/>
+				<img href="gm-05-img-05"/>
+			</gallery>
+			<description>
+				Frostpunk е city-building игра за оцеляване, разработена и публикувана от 11 bit studios. Играчите поемат ролята на лидер в алтернативна история от края на 19 век, в която те трябва да построят и поддържат град по време на световна вулканична зима, управлявайки ресурси, правейки избор как да оцелеят и изследвайки района извън своя град за оцелели, ресурси или други полезни елементи. Играта включва няколко сценария за предприемане, всеки със собствени истории и различни предизвикателства.
+			</description>
+		</game>
+		<game id="gm-06">
+			<title>Hollow Knight</title>
+			<release_year>2017</release_year>
+			<game_developer ref_dev_id="dev-07"/>
+			<game_publisher ref_pub_id="pub-08"/>
+			<PEGI_rating>7+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-01"/>
+				<game_genre ref_genre_id="g-06"/>
+				<game_genre ref_genre_id="g-09"/>
+				<game_genre ref_genre_id="g-10"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-03"/>
+				<game_platform ref_platf_id="platf-04"/>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-07"/>
+				<game_platform ref_platf_id="platf-11"/>
+			</game_platforms>
+			<logo href="gm-06-img-01"/>
+			<gallery>
+				<img href="gm-06-img-02"/>
+				<img href="gm-06-img-03"/>
+				<img href="gm-06-img-04"/>
+				<img href="gm-06-img-05"/>
+			</gallery>
+			<description>
+				Спусни се в дълбините на Forgotten Kingdom
+
+				Под замиращия град Dirtmouth спи древно, разрушено царство. Мнозина са привлечени под повърхността му, търсейки богатства, слава или отговори на стари тайни.
+
+				Hollow Knight е епично екшън приключение в класически, ръчно рисуван 2D стил, развиващо се в огромен взаимосвързан свят. Изследвай тъмни подземия и древни градове, бий се със зли същества и се сприятелявай със странни буболечки, докато разрешаваш древните тайни и загадки, криещи се в сърцето на царството.  
+
+				Използвай своите умения и рефлекси, за да оцелееш
+
+				Hollow Knight е предизвикателно 2D екшън приключение, в което ще бродиш из подземия, ще се изправяш срещу опасни същества и ще бягаш от подли капани, всичко това, за да разрешиш отдавна скрита древна мистерия.
+
+				-Изследвай огромни взаимосвързани светове
+				-Сблъскай се с чудата колекция от приятели и врагове
+				-Развивай мощни нови умения и способности  
+
+				Живописен ръчно изрисуван свят
+
+				Светът на Hollow Knight е съживен в ярки, мрачни детайли, а неговите пещери са оживени със странни и ужасяващи същества, всичко това е анимирано на ръка в традиционен 2D стил.
+
+				Всяка нова зона, която ще откриеш, е изключително уникална и странна, изпълнена с нови същества и герои. Потърси и открий нови чудеса, скрити извън утъпкания път.
+
+				Ако харесваш класически геймплей, симпатични, но страховити герои, епични приключения и красиви, готически светове, тогава Hollow Knight е точно за теб!
+			</description>
+		</game>
+		<game id="gm-07">
+			<title>Nier: Automata - Game of the YoRHa Edition</title>
+			<release_year>2017</release_year>
+			<game_developer ref_dev_id="dev-05"/>
+			<game_publisher ref_pub_id="pub-07"/>
+			<PEGI_rating>18+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-02"/>
+				<game_genre ref_genre_id="g-04"/>
+				<game_genre ref_genre_id="g-07"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-04"/>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-07"/>
+				<game_platform ref_platf_id="platf-11"/>
+			</game_platforms>
+			<logo href="gm-07-img-01"/>
+			<gallery>
+				<img href="gm-07-img-02"/>
+				<img href="gm-07-img-03"/>
+				<img href="gm-07-img-04"/>
+				<img href="gm-07-img-05"/>
+			</gallery>
+			<description>
+				Nier: Automata e екшън-ролево заглавие и продължение на култа от 2010, NieR. Предлагайки великолепна комбинация между екшън и RPG геймплей е едно от задължителните заглавия за почитателите на жанра.
+
+				Извънземна инвазия е оставила човечеството с единствения избор да бъде заточено на луната. Андроидите са изпратени към изоставените руини на нашата планета, за да да премахнат злите Механоиди. YoRHa 2B, последен модел боен андроид е със задачата да се впусне в мисия за премахването на нашествениците от повърхността на Земята. Готов ли си да разбереш докъде ще стигне неизбежната война между андроиди и механоиди?
+
+				NieR: Automata е съвместен проект между Square Enix, създателите на оригиналната Nier, и всепризнатото студио, стоящо зад игри като Bayonetta и Metal Gear Rising, ветераните в екшън жанра - PlatinumGames.
+			</description>
+		</game>
+		<game id="gm-08">
+			<title>Red Dead Redemption 2</title>
+			<release_year>2019</release_year>
+			<game_developer ref_dev_id="dev-06"/>
+			<game_publisher ref_pub_id="pub-05"/>
+			<PEGI_rating>18+</PEGI_rating>
+			<game_genres>
+				<game_genre ref_genre_id="g-01"/>
+				<game_genre ref_genre_id="g-07"/>
+				<game_genre ref_genre_id="g-08"/>
+				<game_genre ref_genre_id="g-12"/>
+				<game_genre ref_genre_id="g-17"/>
+			</game_genres>
+			<game_platforms>
+				<game_platform ref_platf_id="platf-05"/>
+				<game_platform ref_platf_id="platf-07"/>
+				<game_platform ref_platf_id="platf-11"/>
+			</game_platforms>
+			<logo href="gm-08-img-01"/>
+			<gallery>
+				<img href="gm-08-img-02"/>
+				<img href="gm-08-img-03"/>
+				<img href="gm-08-img-04"/>
+				<img href="gm-08-img-05"/>
+			</gallery>
+			<description>
+			Разработена от създателите на Grand Theft Auto V и Red Dead Redemption, Red Dead Redemption 2 е епичен разказ за живота в Америка в зората на Модерната епоха.
+
+			Америка, 1899 г. Краят на ерата на Дивия запад започва,когато законодателите залавят и последните останали престъпни банди. Тези, които не се предават или не загиват, биват убивани.
+			  
+			След провален грабеж в западното градче Блекуотър, Артър Морган и бандата на Ван Дер Линд са принудени да избягат. Федерални агенти и най-добрите ловци на глави в страната са по петите на бандата, която трябва да разграбва и краде, проправяйки си път през суровата сърцевина на Америка, за да оцелее. Тъй като задълбочаващите се вътрешни разногласия заплашват да разкъсат бандата, Артър Морган трябва да направи избор между собствените си идеали и лоялността към бандата, която го е отгледала.
+			</description>
+		</game>
+	</games>
+</catalogue>
